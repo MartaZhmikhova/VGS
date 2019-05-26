@@ -1,0 +1,172 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+body{
+    font: 16px/1.5 "Arial";
+}
+*{
+    margin:0;
+    padding:0;
+    outline:none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+ul,ol,li{
+    list-style:none;
+}
+a,a:hover{
+    text-decoration:none;
+    cursor:pointer;
+}
+
+/* style */
+.container{
+    width: 100%;
+    max-width: 900px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 50px auto;
+    padding: 0 15px;
+}
+.container_img{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.container_img:first-of-type{
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+.container_img:last-of-type{
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+.container_img_item{
+    width: 100%;
+    max-width: 50px;
+    height: 100%;
+    max-height: 50px;
+}
+.container_img::after{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 48px;
+    height: 100%;
+    max-height: 35px;
+    background: transparent url('https://cdn0.iconfinder.com/data/icons/Senary_by_arrioch/512/Drive_Server.png') no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain;
+    background-position: center;
+    z-index: 999;
+}
+.container_img:last-of-type::after{
+    display: none;
+}
+.container_img_position{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container_img_position_item{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    height: 130px;
+    left: -270px;
+}
+.animateImg{
+    -webkit-animation: mymove 4s infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
+    animation: mymove 4s infinite;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes mymove {
+    to {left: 100%;}
+  }
+  
+  @keyframes mymove {
+    to {left: 100%;}
+  }
+
+
+
+@media only screen and (max-width: 768px){
+    .container{
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+    }
+    .container_img,
+    .container_img:first-of-type,
+    .container_img:last-of-type{
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .container_img::after{
+        left: 50%;
+        top: 100%;
+    }
+
+    .container_img_position_item{
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        top: -170px;
+    }
+
+    @-webkit-keyframes mymove {
+        to {top: 100%;}
+      }
+      
+      @keyframes mymove {
+        to {top: 100%;}
+      }
+
+
+}
